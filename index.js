@@ -1,4 +1,4 @@
-import express from 'express';
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 9001;
 const routerCheckout = require('./routers/checkout');
