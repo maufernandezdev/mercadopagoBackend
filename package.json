@@ -3,14 +3,14 @@
   "name": "mercadopago---node---back",
   "version": "1.0.0",
   "description": "",
-  "main" :"app.js",
+  "main" :"index.js",
   "engines": {
     "node":"14.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon src/checkout",
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Mauricio Fernandez",
