@@ -10,11 +10,6 @@
         {
             "src": "/(.*)",
             "dest": "/"
-        },
-        {
-            "src": "/api/checkout",
-            "dest": "/routes/checkout.js",
-            "methods": ["POST"]
         }
     ]
 }
