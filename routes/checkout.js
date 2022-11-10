@@ -7,17 +7,11 @@ mercadopago.configure({access_token: 'TEST-7974656510754281-030814-20836cabe8f81
 checkoutRoute.post('/',(req , res) => {
 
     const preference = {
-        items: [
-          {
-            title: 'Mi producto',
-            unit_price: 100,
-            quantity: 1,
-          },
-        ],
+        items: req.body,
         back_urls: {
-            success: 'https://mercadopago-backend.vercel.app/',
-            failure: 'https://mercadopago-backend.vercel.app/',
-            pending: 'https://mercadopago-backend.vercel.app/'
+            success: 'https://mercadopago-backend.vercel.app/api/checkout/success',
+            failure: 'https://mercadopago-backend.vercel.app/api/checkout/failure',
+            pending: 'https://mercadopago-backend.vercel.app/api/checkout/pending'
         },
         auto_return: 'approved',
     };
