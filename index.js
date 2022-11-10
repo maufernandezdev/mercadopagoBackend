@@ -5,7 +5,7 @@ const checkoutRoute = require('./routes/checkout');
 app.use('/api/checkout', checkoutRoute);
 
 app.get('/', (req, res)=>{
-    return res.send("servidor para realizar checkout con mercadopago");
+    return res.send('servidor para realizar checkout con mercadopago');
 });
 
 app.listen(port,() => {
