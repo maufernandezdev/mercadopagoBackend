@@ -1,23 +1,11 @@
-import express from 'express';
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 9001;
+const checkoutRoute = require('./routes/checkout');
+app.use('/api/checkout', checkoutRoute);
 
 app.get('/', (req, res)=>{
     return res.send("servidor para realizar checkout con mercadopago");
-});
-
-app.post('/api/checkout',(req , res) => {
-
-    const preference = {
-        items: [
-          {
-            title: "Mi producto",
-            unit_price: 100,
-            quantity: 1,
-          },
-        ],
-    };
-    return res.send(JSON.stringify(preference));
 });
 
 app.listen(port,() => {
