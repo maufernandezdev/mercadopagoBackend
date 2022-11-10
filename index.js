@@ -1,16 +1,12 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const port = process.env.PORT || 9001;
-// const mercadopago = require('mercadopago');
-// mercadopago.configure({access_token: "TEST-7974656510754281-030814-20836cabe8f81d381a051d44e9a11510-162067010"});
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({ extended: false })); 
 
 app.get('/', (req, res)=>{
-    res.send("servidor para realizar checkout con mercadopago");
+    return res.send("servidor para realizar checkout con mercadopago");
 });
 
-app.post('/',(req , res) => {
+app.post('/api/checkout',(req , res) => {
 
     const preference = {
         items: [
@@ -21,15 +17,7 @@ app.post('/',(req , res) => {
           },
         ],
     };
-    res.send(JSON.stringify(preference));
-    // mercadopago.preferences
-    // .create(preference)
-    // .then(function (response) {
-    //   return res.send(JSON.stringify(response.body));
-    // })
-    // .catch(function (error) {
-    //   res.send(error);
-    // });
+    return res.send(JSON.stringify(preference));
 });
 
 app.listen(port,() => {
